@@ -1,0 +1,89 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>ADB Quiz5</title>
+    <script>
+        window.setTimeout(function () {
+            window.location.reload();
+        }, 10000);
+    </script>
+    <link rel="stylesheet" href="../static/style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <div class="heading" style="text-align: center;align-content: center;">
+        <div class="card"
+            style="width: 30rem !important; left: 50rem !important; height: 15rem !important; align-items: center; background: cadetblue; font-style: oblique; text-align: center">
+            <div class="card-body" style="text-align:center;">
+                <h5 class="card-title" style="text-align:center">Quiz 5</h5>
+                <div>
+                    <h2>
+                        <p class="card-text" style="text-align:center">Name: Sainath Indupuri</p>
+                        <p class="card-text" style="text-align:center">UTA ID : 1001856992</p>
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</head>
+
+<body>
+    <form action="/SetTime" , method=post>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="time" name="time">Set Time</button>
+    </form>
+    <div class="ShowAllTable" style="width: 100rem; margin-left: 5rem;margin-right: 5rem; align-items: center;">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Student Message</th>
+                    <th>My Message</th>
+                </tr>
+            </thead>
+            {% for item in data %}
+            <tbody>
+                <tr>
+                    {% if item[0] == 'TEACHER' %}
+                    <td>Question Asked By T: {{item[1]}}</td>
+                    <td></td>
+                    {% endif %}
+
+                    {% if item[0] == 'STUDENT' %}
+                    <td>Answer By Student S:{{item[1]}}</td>
+                    <td></td>
+                    {% endif %}
+                    {% if item[0] == 'ADMIN' %}
+
+                    <td></td>
+                    <td>Grade For S:{{item[1]}}</td>
+
+
+
+                    {% endif %}
+                </tr>
+
+            </tbody>
+            {% endfor %}
+        </table>
+
+
+        <form action="/TeacherMessage" , method=post>
+            <div class="input-group">
+                <input class="form-control mr-sm-2" style="width: 50%;" id="Message" name="Message" type="text"
+                    placeholder="Message" aria-label="Message">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sent</button>
+            </div>
+        </form>
+    </div>
+
+    <footer>
+
+    </footer>
+
+</body>
+
+</html>
