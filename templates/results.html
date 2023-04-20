@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Guessing Game Results</title>
+  </head>
+  <body>
+    <h1>Guessing Game Results</h1>
+    <p>Player 1: {{ p1_name }}</p>
+    <p>Player 99: {{ p99_name }}</p>
+    <p>Secret value: {{ secret_value }}</p>
+    <p>Your guess: {{ guess }}</p>
+    {% if feedback %}
+    <p>{{ feedback }}</p>
+    {% endif %}
+    <p>Score: {{ score }}</p>
+    <p>Elapsed time: {{ elapsed_time }}</p>
+  </body>
+</html>

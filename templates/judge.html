@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Mr. Judge J</title>
+  </head>
+  <body>
+    <h1>Guessing Game: Judge</h1>
+    <form action="/judge" method="POST">
+        <label for="low_range">Low range:</label>
+        <input type="number" id="low_range" name="low_range" value="20"><br><br>
+        <label for="high_range">High range:</label>
+        <input type="number" id="high_range" name="high_range" value="200"><br><br>
+        <label for="tolerance">Tolerance:</label>
+        <input type="number" id="tolerance" name="tolerance" value="5"><br><br>
+        <label for="countdown">Countdown (seconds):</label>
+        <input type="number" id="countdown" name="countdown" value="45"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
